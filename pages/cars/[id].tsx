@@ -69,9 +69,9 @@ export async function getStaticProps({params}){
 }
 
 export async function getStaticPaths(){
-    // const req = await public_cars.get('/cars.json');
-    // const data = req.data;
-    const data = [];
+    const req = await public_cars.get('/cars.json');
+    const data = req.data;
+    
 
     const paths = data.map((car) => {
         return {params: {id: car}}
